@@ -33,4 +33,6 @@ Route::get('/about',function(){
     return view('about');
 });
 
-Route::get('/about/item/',[ItemController::class,'index']);
+Route::get('/admin/item/',[ItemController::class,'index']);
+Route::get('/admin/item/create',[ItemController::class,'create']);
+Route::get('/admin/item/add',[ItemController::class,'add']);
