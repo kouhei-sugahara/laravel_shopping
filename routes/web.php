@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ItemController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,5 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/about',function(){
-    return 'このページはAboutページです';
+    return view('about');
 });
+
+Route::get('/about/item/',[ItemController::class,'index']);
