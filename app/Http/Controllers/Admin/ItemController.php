@@ -23,6 +23,6 @@ class ItemController extends Controller
     public function add()
     {
         //商品一覧にリダイレクト
-        return view('/admin/item/');
+        return redirect('/admin/item/');
     }
 }
