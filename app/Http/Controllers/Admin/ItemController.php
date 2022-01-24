@@ -24,5 +24,6 @@ class ItemController extends Controller
     {
         //商品一覧にリダイレクト
         return redirect('/admin/item/');
+        //return redirect()->route('/admin/item/');
     }
 }
