@@ -36,3 +36,5 @@ Route::get('/about',function(){
 Route::get('/admin/item/',[ItemController::class,'index'])->name('admin.item.index');
 Route::get('/admin/item/create',[ItemController::class,'create'])->name('admin.item.create');
 Route::post('/admin/item/add',[ItemController::class,'add'])->name('admin.item.add');
+Route::get('/admin/item/edit/{id}', [ItemController::class, 'edit'])->name('admin.item.edit');
+Route::post('/admin/item/update/{id}', [ItemController::class, 'update'])->name('admin.item.update');

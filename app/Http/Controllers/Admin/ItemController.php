@@ -11,7 +11,10 @@ class ItemController extends Controller
     //商品一覧ページ
     public function index()
     {
-        return view('admin.item.index');
+        //SELECT * FROM items;
+        $items = Item::get();
+        $data = ['items' => $items];
+        return view('admin.item.index',$data);
     }
 
     //商品入力
@@ -25,10 +28,26 @@ class ItemController extends Controller
     {
         $posts = $request->all();
         //dd($posts);
-        //INSERT
+        //INSERT INTO items SET name = 'XXXX', code = 'XXXX', 
         Item::create($posts);
         //商品一覧にリダイレクト
         return redirect('/admin/item/');
         //return redirect()->route('/admin/item/');
+    }
+
+    public function edit(Request $request, $id)
+    {
+        //SELECT * FROM items WHERE id = xxx;
+        $item = Item::find($id);
+        $data = ['item' => $item];
+        return view('admin.item.edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $posts = $request->all();
+        //SELECT items SET name = 'xxxx', code = 'xxxx' ... WHERE id = xxx;
+        Item::find($id)->update($posts);
+        return redirect()->route('admin.item.index');
     }
 }
