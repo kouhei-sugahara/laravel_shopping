@@ -7,6 +7,7 @@
         <th>{{__('label.item_name')}}</th>
         <th>{{__('label.item_code')}}</th>
         <th>{{__('label.price')}}</th>
+        <th>{{__('label.stock')}}</th>
     </tr>
 
     @if($items)
@@ -16,6 +17,7 @@
         <td>{{$item->name}}</td>
         <td>{{$item->code}}</td>
         <td>{{$item->price}}</td>
+        <td>{{$item->stock}}</td>
     </tr>
     @endforeach
     @endif
