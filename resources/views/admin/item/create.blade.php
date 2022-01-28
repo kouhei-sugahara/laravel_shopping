@@ -16,6 +16,10 @@
         <label for="">{{__('label.price')}}</label>
         <input type="number" name="price">
     </div>
+    <div>
+        <label for="">{{__('label.stock')}}</label>
+        <input type="number" name="stock">
+    </div>
 
     <button>{{__('Update')}}</button>
 </form>
